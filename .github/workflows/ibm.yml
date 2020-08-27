@@ -26,4 +26,6 @@ jobs:
         ibmcloud target -g Default
         ibmcloud target --cf
         ibmcloud cf install
+        ibmcloud login -a 'https://cloud.ibm.com' -r 'us-south'
+        ibmcloud target --cf-api 'https://api.us-south.cf.cloud.ibm.com'
         ibmcloud cf restart ${{ secrets.CFNAME }}
