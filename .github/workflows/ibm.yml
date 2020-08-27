@@ -14,7 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Install IBM CLI
+      run: curl -sL https://raw.githubusercontent.com/IBM-Bluemix/developer-tools-installer/master/linux-installer/idt-installer | bash
     - name: Init
       run: |
         chmod -R 777 ./IBM_Cloud_CLI/
