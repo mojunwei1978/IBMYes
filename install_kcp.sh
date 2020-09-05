@@ -41,7 +41,7 @@ EOF
                 "streamSettings": {
                     "network":"kcp",
                     "kcpSettings": {
-                              "uplinkCapacity": 20,
+                              "uplinkCapacity": 40,
                               "downlinkCapacity": 100,
                               "congestion": true,
                               "header": {
