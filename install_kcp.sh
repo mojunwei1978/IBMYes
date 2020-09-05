@@ -47,8 +47,7 @@ EOF
                               "header": {
                                "type": "none"
                               }
-                        "path": "${WSPATH}"
-                    }
+                         }
                 }
             }
         ],
