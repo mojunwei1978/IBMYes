@@ -26,37 +26,73 @@ EOF
 
     cat >  ${SH_PATH}/IBMYes/v2ray-cloudfoundry/v2ray/config.json  << EOF
     {
-        "inbounds": [
-            {
-                "port": 8080,
-                "protocol": "vmess",
-                "settings": {
-                    "clients": [
-                        {
-                            "id": "${UUID}",
-                            "alterId": 4
-                        }
-                    ]
-                },
-                "streamSettings": {
-                    "network":"kcp",
-                    "kcpSettings": {
-                              "uplinkCapacity": 40,
-                              "downlinkCapacity": 100,
-                              "congestion": true,
-                              "header": {
-                               "type": "none"
-                              }
-                         }
-                }
-            }
+     {
+  "policy": null,
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": null,
+      "port": 443,
+      "listen": null,
+      "protocol": "vmess",
+      "sniffing": null,
+      "settings": {
+        "auth": null,
+        "udp": false,
+        "ip": null,
+        "address": null,
+        "clients": [
+          {
+            "id": "44d9a309-0926-42dc-9868-6b7e1d9a6685",
+            "alterId": 4,
+            "email": "t@t.tt",
+            "security": null,
+            "encryption": null
+          }
         ],
-        "outbounds": [
-            {
-                "protocol": "freedom",
-                "settings": {}
-            }
-        ]
+        "decryption": null
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "serverName": null
+        },
+        "tcpSettings": null,
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 50,
+          "uplinkCapacity": 100,
+          "downlinkCapacity": 100,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "none",
+            "request": null,
+            "response": null
+          }
+        },
+        "wsSettings": null,
+        "httpSettings": null,
+        "quicSettings": null
+      }
+    }
+  ],
+  "outbounds": null,
+  "stats": null,
+  "api": null,
+  "dns": null,
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": []
+  }
+}
     }
 EOF
     echo "配置完成。"
